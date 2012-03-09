@@ -1,0 +1,33 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+  <bean id="insert" class="com.salesforce.dataloader.process.ProcessRunner" singleton="false">
+    <description>Insert Objects</description>
+    <property name="name" value="insert"/>
+    <property name="configOverrideMap">
+      <map>
+        <entry key="dataAccess.readUTF8" value="true"/>
+        <entry key="dataAccess.type" value="csvRead"/>
+        <entry key="dataAccess.writeUTF8" value="true"/>
+        <entry key="process.enableLastRunOutput" value="false"/>
+        <entry key="process.operation" value="insert"/>
+        <entry key="sfdc.bulkApiCheckStatusInterval" value="5000"/>
+        <entry key="sfdc.bulkApiSerialMode" value="5000"/>
+        <entry key="sfdc.debugMessages" value="false"/>
+        <entry key="sfdc.enableRetries" value="true"/>
+        <entry key="sfdc.endpoint" value=""/>
+        <entry key="sfdc.extractionRequestSize" value="500"/>
+        <entry key="sfdc.insertNulls" value="false"/>
+        <entry key="sfdc.loadBatchSize" value="150"/>
+        <entry key="sfdc.maxRetries" value="3"/>
+        <entry key="sfdc.minRetrySleepSecs" value="2"/>
+        <entry key="sfdc.noCompression" value="false"/>
+        <entry key="sfdc.password" value=""/>
+        <entry key="sfdc.timeoutSecs" value="60"/>
+        <entry key="sfdc.useBulkApi" value="true"/>
+        <entry key="sfdc.username" value=""/>
+      </map>
+    </property>
+  </bean>
+
+</beans>
